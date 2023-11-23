@@ -82,6 +82,33 @@ function Survey() {
          <div className="ml-20 mt-24">
           <div>
             <div className="side-nav-item">
+                <div className="flex flex-row">
+                <div style={{ flex: 1 }}>
+                    <TextField 
+                        id="outlined-basic" 
+                        label="Your name" 
+                        variant="outlined"
+                        value={formData.name}
+                        onChange={(e) =>
+                            setFormData({ ...formData, name: e.target.value })
+                        }
+                    />
+                </div>
+                <div style={{ flex: 1 }}>
+                    <TextField 
+                        id="outlined-basic" 
+                        label="Your Company" 
+                        variant="outlined"
+                        value={formData.company}
+                        onChange={(e) =>
+                            setFormData({ ...formData, company: e.target.value })
+                        }
+                    />
+                </div>
+                </div>
+
+                <div className="flex flex-row mt-10">
+
                 <select
                   name="language"
                   id="language"
@@ -102,6 +129,7 @@ function Survey() {
                   <option value="php">PHP</option>
                   <option value="ruby">Ruby</option>
                 </select>
+                </div>
                 </div>
                 </div>
                 </div>
@@ -167,7 +195,7 @@ function Survey() {
             </div>
             </div>
             
-            <div className="flex justify-between mt-4 ml-20 mr-20">
+            <div className="flex justify-between mt-4 ml-20 mr-10">
               <TextField
                 label="What will you suggest to be commented on this patch file?"
                 name="reviewer_suggestion"
