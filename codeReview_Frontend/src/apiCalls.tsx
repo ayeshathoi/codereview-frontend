@@ -1,27 +1,29 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:8081/api';
 
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
-export const addreview = async (requestData,dataset,language) => {
-    console.log('request data', requestData);
-    const ret = await axios.post(
-      `http://localhost:3000/review/${dataset}/${language}`,
-      requestData
-    );
-    return ret.data;
+export const addreview = async (data) => {
+    // console.log(data);
+    const ret = await axios.post(`${baseURL}/review`, data);
   };
-  
-  export const viewData = async ( requestData) => {
-    const dataset = requestData.dataset;
-    const language = requestData.language;
-    const saveName = await axios.post (
-      `http://localhost:3000/saveUser/${dataset}/${language}`,
-      requestData
-    );
-    const ret = await axios.get(
-      `http://localhost:3000/view/${dataset}/${language}`);
 
-    return ret.data;
+  function change(str) {
+    return JSON.parse(`{
+      "temp": "${str}"
+    }`).temp
+  }
+  export const viewData = async (lang) => {
+    // console.log(lang);
+    const ret = await axios.get(`${baseURL}/review/${lang}`);
+    let res = ret.data;
+    // console.log(change(res.patch));
+    res.original = change(res.original);
+    res.output = change(res.output);
+    res.patch = change(res.patch);
+    // console.log(res.patch);
+
+    // console.log(res);
+    return res;
   };
