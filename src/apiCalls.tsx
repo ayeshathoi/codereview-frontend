@@ -9,7 +9,7 @@ import axios from 'axios';
 
 
 
-const baseURL = 'https://codereview-survey-5i0f.onrender.com/api/';
+const baseURL = 'https://codereview-survey.onrender.com/api/';
 
 // axios.defaults.withCredentials = true;
 
