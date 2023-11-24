@@ -182,18 +182,21 @@ function Survey() {
                 </div>
 
                 <div className="flex flex-row mt-10 ml-20">
-                    <div style={{ flex: 1 }}>
-                    <Card className="p-4 mr-10">
+                    <div style={{ flex: 1, width: '50%'}}>
+                    <Card className="p-4 mr-10" style={{width: '100%', overflow: 'scroll' }}>
                             <Typography variant="h6" className="mb-4">
-                              <pre style={{ overflow: "auto", maxWidth: "100%" }}>
+                              <pre>
                                 {formData.patch_file}
                                 </pre>
                             </Typography>
                         </Card>
                     </div>
-                    <div style={{ flex: 1 }}>
-                    <div style={{ flex: 1 }}>
-                        <Card className="p-4 mr-10">
+                    <div style={{ flex: 1 , width: '100%', paddingLeft: '5%'}}>
+                    <div style={{ flex: 1, width: '40%' }}>
+                        <big>Microsoft Generated Comment</big>
+                    </div>
+                    <div style={{ flex: 1, width: '80%' }}>
+                        <Card className="p-4 mr-10" style={{width: '100%', overflow: 'scroll'}}>
                             <Typography variant="h6" className="mb-4">
                             <pre>
                                 {formData.microsoft_generated_comment}
@@ -201,12 +204,15 @@ function Survey() {
                             </Typography>
                         </Card>
                        
-                        <hr className="mt-4" />
+                        {/* <hr className="mt-4" /> */}
 
                     </div>
 
-                    <div style={{ flex: 1 }}>
-                    <Card className="p-4 mr-10">
+                    <div style={{ flex: 1, width: '40%', paddingTop: '5%' }}>
+                        <big>Our Model Generated Comment</big>
+                    </div>
+                    <div style={{ flex: 1, width: '80%' }}>
+                    <Card className="p-4 mr-10" style={{width: '100%', overflow: 'scroll'}}>
                             <Typography variant="h6" className="mb-4">
                             <pre>
                                 {formData.our_review_comment}
