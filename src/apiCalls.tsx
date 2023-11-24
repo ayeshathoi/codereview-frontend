@@ -1,11 +1,15 @@
+// import axios from 'axios';
+// const dotenv = require('dotenv');
+// const Express = require('express');
+// dotenv.config();
+
+
+
 import axios from 'axios';
-const dotenv = require('dotenv');
-const Express = require('express');
-dotenv.config();
 
 
 
-const baseURL = process.env.BASEURL
+const baseURL = 'https://codereview-survey.onrender.com/api';
 
 // axios.defaults.withCredentials = true;
 
